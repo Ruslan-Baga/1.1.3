@@ -8,8 +8,7 @@ public class Util {
     private final static String DB_USERNAME = "root";
     private final static String DB_PASSWORD = "root";
 
-    public Connection getConnection() {
-
+    public static Connection getConnection() {
         Connection connection;
         try {
                 connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);

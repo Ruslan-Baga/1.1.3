@@ -24,7 +24,7 @@ public class UserDaoJDBCImpl implements UserDao {
                     + ")";
             statement.executeUpdate(createTable);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -33,7 +33,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("DROP TABLE users");
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -45,7 +45,7 @@ public class UserDaoJDBCImpl implements UserDao {
             prepStat.setByte(3, age);
             prepStat.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -54,7 +54,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.setLong(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -71,7 +71,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 list.add(user);
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return list;
     }
@@ -80,7 +80,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try(Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM users");
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 }
